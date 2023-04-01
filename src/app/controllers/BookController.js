@@ -5,7 +5,7 @@ class BookController {
   getList(req, res, next) {
     Book.find({})
       .then((books) => {
-        res.json(books);
+        res.status(200).json(books);
       })
       .catch(next);
   }
