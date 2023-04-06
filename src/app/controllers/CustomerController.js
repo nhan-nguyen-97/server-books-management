@@ -4,6 +4,7 @@ class CustomerController {
   //[GET] /customers
   getList(req, res, next) {
     Customer.find({})
+      .sort({ createdAt: -1 })
       .then((customers) => {
         res.json(customers);
       })
